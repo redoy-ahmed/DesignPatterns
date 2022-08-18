@@ -1,4 +1,4 @@
-package creational.common.interfaces;
+package creational;
 
 public interface Notification {
     void notifyUser();

@@ -1,6 +1,5 @@
 package creational.singleton.models;
-
-import creational.common.interfaces.Notification;
+import creational.Notification;
 
 public class EmailNotification implements Notification {
 

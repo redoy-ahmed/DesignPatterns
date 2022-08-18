@@ -1,6 +1,6 @@
 package creational.factory.factoryprovider;
 
-import creational.common.interfaces.Notification;
+import creational.Notification;
 import creational.factory.models.EmailNotification;
 import creational.factory.models.PushNotification;
 import creational.factory.models.SMSNotification;
