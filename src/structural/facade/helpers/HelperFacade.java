@@ -16,7 +16,7 @@ public class HelperFacade {
         Connection con;
         switch (dbType) {
             case MYSQL:
-                con = new MySqlHelper().getDBConnection();
+                con = MySqlHelper.getDBConnection();
                 MySqlHelper mySqlHelper = new MySqlHelper();
                 switch (reportType) {
                     case HTML:
@@ -28,7 +28,7 @@ public class HelperFacade {
                 }
                 break;
             case ORACLE:
-                con = new OracleHelper().getDBConnection();
+                con = OracleHelper.getDBConnection();
                 OracleHelper oracleHelper = new OracleHelper();
                 switch (reportType) {
                     case HTML:

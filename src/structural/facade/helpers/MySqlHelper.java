@@ -6,7 +6,7 @@ import java.sql.Connection;
 
 public class MySqlHelper implements GenerateReport {
 
-    public Connection getDBConnection() {
+    public static Connection getDBConnection() {
         return null;
     }
 

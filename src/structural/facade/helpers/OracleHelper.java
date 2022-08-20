@@ -6,7 +6,7 @@ import java.sql.Connection;
 
 public class OracleHelper implements GenerateReport {
 
-	public Connection getDBConnection(){
+	public static Connection getDBConnection(){
 		//get Oracle DB connection using connection parameters
 		return null;
 	}
