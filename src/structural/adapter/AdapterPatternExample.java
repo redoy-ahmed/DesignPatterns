@@ -1,22 +1,29 @@
 package structural.adapter;
 
-import structural.adapter.charger.AndroidCharger;
-import structural.adapter.charger.AppleCharger;
-import structural.adapter.phone.ApplePhone;
-
 public class AdapterPatternExample {
 
+    /*
+        An Adapter pattern acts as a connector between two incompatible interfaces that otherwise cannot be
+        connected directly. An Adapter wraps an existing class with a new interface so that it becomes compatible
+        with the client’s interface.
+
+        The main motive behind using this pattern is to convert an existing interface into another interface
+        that the client expects. It's usually implemented once the application is designed.
+
+
+        Consider a scenario in which there is an app that's developed in the US which returns the top speed of luxury cars in miles per hour (MPH).
+        Now we need to use the same app for our client in the UK that wants the same results but in kilometers per hour (km/h).
+        To deal with this problem, we'll create an adapter which will convert the values and give us the desired results:
+
+    */
+
     public static void main(String[] args) {
-        ApplePhone applePhone = new ApplePhone();
-        AndroidCharger androidCharger = new AndroidCharger();
+        ICar bmw = new BMW();
+        //for USA
+        System.out.println(bmw.getSpeed());
 
-        System.out.println("We have an apple phone and an android charger...!");
-
-        AppleCharger androidToAppleChargerAdapter = new AndroidToAppleChargerAdapter(androidCharger); //Adapter Pattern
-
-        System.out.println("Created an Apple Charger by converting an android charger");
-
-        applePhone.plugAppleCharger(androidToAppleChargerAdapter);
-        applePhone.charge();
+        //for UK
+        ISpeedAdapter bmwAdapter = new SpeedAdapter(bmw);
+        System.out.println(bmwAdapter.getSpeed());
     }
 }
