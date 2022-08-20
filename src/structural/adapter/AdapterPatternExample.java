@@ -15,6 +15,7 @@ public class AdapterPatternExample {
         Now we need to use the same app for our client in the UK that wants the same results but in kilometers per hour (km/h).
         To deal with this problem, we'll create an adapter which will convert the values and give us the desired results:
 
+        **** JTI Pack redemption TP calculation using existing tp calculation
     */
 
     public static void main(String[] args) {
