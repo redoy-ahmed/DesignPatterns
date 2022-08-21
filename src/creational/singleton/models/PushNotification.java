@@ -4,7 +4,7 @@ import creational.Notification;
 public class PushNotification implements Notification {
 
     //region Eager Initialization
-
+/*
     private static PushNotification pushNotification = new PushNotification();
 
     private PushNotification() {
@@ -13,12 +13,11 @@ public class PushNotification implements Notification {
 
     public static PushNotification getInstance() {
         return pushNotification;
-    }
+    }*/
 
     //endregion
 
     //region Lazy Initialization
-/*
     private static PushNotification pushNotification;
 
     private PushNotification() {
@@ -26,13 +25,14 @@ public class PushNotification implements Notification {
     }
 
     public static PushNotification getInstance() {
-        if (pushNotification == null)
-            return pushNotification = new PushNotification();
-        else
-            return pushNotification;
-    }
+        if (pushNotification == null) {
+            synchronized (PushNotification.class) {
+                return pushNotification = new PushNotification();
+            }
+        }
 
-    */
+        return pushNotification;
+    }
 
     //endregion
 
